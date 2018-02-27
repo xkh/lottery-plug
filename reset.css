@@ -8,4 +8,3 @@ ol,ul,li{list-style:none;}
 fieldset,img{border:0;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix{*zoom:1;}
-.ib{display:inline-block;*display:inline;*zoom:1;}
