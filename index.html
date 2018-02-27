@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="lottery.css">
+	<title>lottery</title>
+</head>
+<body>
+	<div id="lottery">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="lottery-li lottery-li-1">1</td>
+				<td class="lottery-li lottery-li-2">2</td>
+				<td class="lottery-li lottery-li-3">3</td>
+			</tr>
+			<tr>
+				<td class="lottery-li lottery-li-8">8</td>
+				<td><a href="javascript:;" id="begin">开始</a></td>
+				<td class="lottery-li lottery-li-4">4</td>
+			</tr>
+			<tr>
+				<td class="lottery-li lottery-li-7">7</td>
+				<td class="lottery-li lottery-li-6">6</td>
+				<td class="lottery-li lottery-li-5">5</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="plug.lottery.js" charset="utf-8"></script>
+	<script type="text/javascript">
+        //应用
+        var $begin = document.getElementById('begin');
+        $begin.onclick = function () {
+
+            Lottery.init({
+                classChild: "lottery-li",
+                classOn: "select-on",
+                loop: 3,
+                speed: 100
+            });
+
+            //需要异步时
+            // Lottery.running(function () {
+            // $.get('xxxx',{},function (res) {
+            //     Lottery.runningStop();
+            //     Lottery.run(2, function () {
+            //         console.log('中奖')
+            //     })
+            // })
+            // });
+
+            Lottery.run(2, function () {
+                console.log('中奖')
+            })
+        };
+	</script>
+</body>
+</html>
